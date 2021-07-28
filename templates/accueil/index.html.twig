@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HollyFx - MakeUp Artist
+{% endblock %}
+{% block stylesheets %}
+	<link href="{{asset("assets/css/index.css")}}" rel="stylesheet">
+	<link href="{{asset("assets/css/fontController.css")}}" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+	<div class="div-container">
+		<div class="div-home-img">
+			<img class="home-img" src="{{asset("assets/img/test-bckg.jpeg")}}">
+		</div>
+		<div class="div-menu roboto">
+			<div class="div-logo">
+				<img class="logo-img" src="{{asset("assets/img/hollyfx-logo-black.png")}}">
+			</div>
+			
+			<div class="linkAccueil">
+				<a href="" class="linkAccueilText">Galerie</a>
+			</div>
+			<div class="linkAccueil">
+				<a href="" class="linkAccueilText">Services</a>
+			</div>
+			<div class="linkAccueil">
+				<a href="" class="linkAccueilText">About Me</a>
+			</div>
+			<div class="linkAccueil">
+				<a href="" class="linkAccueilText">Contact</a>
+			</div>
+
+
+		</div>
+	</div>
+
+
+{% endblock %}

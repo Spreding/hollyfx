@@ -1,0 +1,47 @@
+body{
+  margin: 0;
+}
+.div-container {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.div-home-img {
+  width: 80%;
+  text-align: center;
+}
+.home-img {
+  width: auto;
+  height: 100vh;
+  vertical-align: top;
+}
+
+.div-menu {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+}
+.div-logo{
+  padding-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.logo-img{
+  width: 60%;
+}
+
+.linkAccueil {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 20px;
+  font-size: 25px;
+  font-weight:300;
+  text-align: center;
+}
+.linkAccueilText {
+  color: black;
+  text-decoration: none;
+}
+.linkAccueilText:hover {
+  color: red;
+}
