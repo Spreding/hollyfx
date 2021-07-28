@@ -27,7 +27,7 @@ body{
   text-align: center;
 }
 .logo-img{
-  width: 60%;
+  width: 70%;
 }
 
 .linkAccueil {
@@ -43,5 +43,5 @@ body{
   text-decoration: none;
 }
 .linkAccueilText:hover {
-  color: red;
+  color: #ebaa30;
 }
