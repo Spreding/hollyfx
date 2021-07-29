@@ -1,45 +1,49 @@
-body{
+html,
+body {
   margin: 0;
-}
-.div-container {
-  display: flex;
-  flex-wrap: nowrap;
+  height: 100%;
+  overflow: hidden;
 }
 
 .div-home-img {
-  width: 80%;
+  width: 100%;
+  height: 100vh;
   text-align: center;
 }
 .home-img {
-  width: auto;
-  height: 100vh;
+  width: 100%;
   vertical-align: top;
 }
 
 .div-menu {
-  width: 20%;
-  display: flex;
-  flex-direction: column;
+  left: 35%;
+  top: 10%;
+  position: absolute;
+  width: 30%;
 }
-.div-logo{
-  padding-top: 30px;
+.div-logo {
+  padding-top: 50px;
   margin-bottom: 30px;
   text-align: center;
 }
-.logo-img{
-  width: 70%;
+.logo-img {
+  width: 100%;
 }
-
+.div-linkAccueil{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+}
 .linkAccueil {
   margin-top: 10px;
-  margin-left: 10px;
-  margin-right: 20px;
+  /* margin-left: 10px; */
+  /* margin-right: 20px; */
   font-size: 25px;
-  font-weight:300;
+  font-weight: 300;
   text-align: center;
 }
 .linkAccueilText {
-  color: black;
+  color: white;
   text-decoration: none;
 }
 .linkAccueilText:hover {
