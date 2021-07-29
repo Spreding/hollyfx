@@ -4,6 +4,12 @@ body {
   height: 100%;
   overflow: hidden;
 }
+body {
+  background-image: url("/assets/img/background-home.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 .div-home-img {
   width: 100%;
@@ -29,15 +35,13 @@ body {
 .logo-img {
   width: 100%;
 }
-.div-linkAccueil{
+.div-linkAccueil {
   display: flex;
   flex-direction: row;
-  justify-content:space-between;
+  justify-content: space-between;
 }
 .linkAccueil {
   margin-top: 10px;
-  /* margin-left: 10px; */
-  /* margin-right: 20px; */
   font-size: 25px;
   font-weight: 300;
   text-align: center;
@@ -49,3 +53,31 @@ body {
 .linkAccueilText:hover {
   color: #ebaa30;
 }
+
+@media (max-width: 1500px) {
+  .div-menu {
+    width: 50%;
+    left: 25%;
+  }
+
+}
+
+@media (min-width: 2100px) {
+  .linkAccueil{
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+
+  .div-menu{
+    width: 90%;
+    left: 5%;
+  }
+  
+  .div-linkAccueil{
+    flex-direction: column;
+  }
+}
+
+

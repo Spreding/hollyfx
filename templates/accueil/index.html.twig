@@ -3,6 +3,7 @@
 {% block title %}HollyFx - MAKE UP ARTIST
 {% endblock %}
 {% block stylesheets %}
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="{{asset("assets/css/index.css")}}" rel="stylesheet">
 	<link href="{{asset("assets/css/fontController.css")}}" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,9 +13,6 @@
 
 {% block body %}
 	<div class="div-container">
-		<div class="div-home-img">
-			<img class="home-img" src="{{asset("assets/img/background-home.jpg")}}">
-		</div>
 		<div class="div-menu roboto">
 			<div class="div-logo">
 				<img class="logo-img" src="{{asset("assets/img/HOLYFX-LOGO_blanc.svg")}}">
@@ -33,6 +31,18 @@
 					<a href="" class="linkAccueilText">Contact</a>
 				</div>
 			</div>
+
+			{# <div>
+							<iframe src="https://chromedino.com/" frameborder="0" scrolling="no" width="100%" height="100%" loading="lazy"></iframe>
+							<style type="text/css">
+								iframe {
+									position: absolute;
+									width: 100%;
+									height: 100%;
+									z-index: 999;
+								}
+							</style>
+						</div> #}
 
 
 		</div>
