@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		<link rel="icon" href="{{asset("assets/img/hollyfx-logo-black.png")}}"/>
+		<link href="{{asset("assets/css/header.css")}}" rel="stylesheet">
+		<link href="{{asset("assets/css/fontController.css")}}" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
+		{% block stylesheets %}
+			{#{{ encore_entry_link_tags('app') }}#}
+		{% endblock %}
+
+		{% block javascripts %}
+			{#{{ encore_entry_script_tags('app') }}#}
+		{% endblock %}
+	</head>
+	<body>
+		<div class="header_main">
+			<div class="header_div_logo">
+				<a href="/"><img class="header_logo" src="{{asset("assets/img/HOLYFX-LOGO_blanc.svg")}}" alt=""></a>
+			</div>
+			<div class="header_div_menu roboto">
+				<div class="linkAccueil">
+					<a href="/galerie" class="linkAccueilText">Portfolio</a>
+				</div>
+				<div class="linkAccueil">
+					<a href="/galerie" class="linkAccueilText">Service</a>
+				</div>
+				<div class="linkAccueil">
+					<a href="/galerie" class="linkAccueilText">Boutique</a>
+				</div>
+				<div class="linkAccueil">
+					<a href="" class="linkAccueilText">A propos</a>
+				</div>
+				<div class="linkAccueil">
+					<a href="" class="linkAccueilText">Contact</a>
+				</div>
+			</div>
+		</div>
+		{% block body %}{% endblock %}
+	</body>
+</html>
