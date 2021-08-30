@@ -1,9 +1,32 @@
 {% extends 'header.html.twig' %}
 {% block stylesheets %}
-    <link href="{{asset("assets/css/galerie.css")}}" rel="stylesheet">
+	<link href="{{asset("assets/css/portfolio.css")}}" rel="stylesheet">
 {% endblock %}
-{% block title %}Hello GalerieController!{% endblock %}
+{% block title %}HollyFx - Portfolio
+{% endblock %}
 
 {% block body %}
+	<div class="categorieFlex">
+		<div class="categorieDiv">
+			<a class="categorieLink" href="{{path("MakeUp")}}">
+				<img class="galerie_categorie_button" src="{{asset("assets/img/maquillage_button_square.PNG")}}" alt="">
+				<p class="categorieText roboto">Make Up</p>
+			</a>
 
+		</div>
+		<div class="categorieDiv">
+			<a class="categorieLink" href="{{path("Creation")}}">
+				<img class="galerie_categorie_button" src="{{asset("assets/img/creation_button_square.PNG")}}" alt="">
+				<p class="categorieText roboto">Création</p>
+			</a>
+		</div>
+
+		<div class="categorieDiv">
+			<a class="categorieLink" href="{{path("Perruque")}}">
+				<img class="galerie_categorie_button" src="{{asset("assets/img/perruque_button_square.PNG")}}" alt="">
+				<p class="categorieText roboto">Perruque / Postiche</p>
+			</a>
+
+		</div>
+	</div>
 {% endblock %}

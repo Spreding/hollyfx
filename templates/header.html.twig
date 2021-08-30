@@ -2,16 +2,19 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>
 			{% block title %}Welcome!
 			{% endblock %}
 		</title>
-		<link rel="icon" href="{{asset("assets/img/hollyfx-logo-black.png")}}"/>
+		
+		<link rel="icon" href="{{asset("assets/img/HOLYFX-LOGO_noir.png")}}"/>
 		<link href="{{asset("assets/css/header.css")}}" rel="stylesheet">
 		<link href="{{asset("assets/css/fontController.css")}}" rel="stylesheet">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
+		<script src="https://kit.fontawesome.com/6ad9ea93a4.js" crossorigin="anonymous"></script>
 		{% block stylesheets %}
 			{#{{ encore_entry_link_tags('app') }}#}
 		{% endblock %}
@@ -26,20 +29,22 @@
 				<a href="/"><img class="header_logo" src="{{asset("assets/img/HOLYFX-LOGO_blanc.svg")}}" alt=""></a>
 			</div>
 			<div class="header_div_menu roboto">
-				<div class="linkAccueil">
-					<a href="/galerie" class="linkAccueilText">Portfolio</a>
+				<div
+					class="linkAccueil dropdown">
+					{# <button class="dropbtn">Dropdown</button> #}
+					<a href="{{path("Portfolio")}}" class="linkAccueilText">Portfolio <i class="fas fa-caret-down"></i></a>
+					
+					<div class="dropdown-content">
+						<a href="{{path("Creation")}}">Création</a>
+						<a href="{{path("MakeUp")}}">Make Up</a>
+						<a href="{{path("Perruque")}}">Perruque</a>
+					</div>
 				</div>
 				<div class="linkAccueil">
-					<a href="/galerie" class="linkAccueilText">Service</a>
+					<a href="{{path("APropos")}}" class="linkAccueilText">A propos</a>
 				</div>
 				<div class="linkAccueil">
-					<a href="/galerie" class="linkAccueilText">Boutique</a>
-				</div>
-				<div class="linkAccueil">
-					<a href="" class="linkAccueilText">A propos</a>
-				</div>
-				<div class="linkAccueil">
-					<a href="" class="linkAccueilText">Contact</a>
+					<a href="{{path("Contact")}}" class="linkAccueilText">Contact</a>
 				</div>
 			</div>
 		</div>

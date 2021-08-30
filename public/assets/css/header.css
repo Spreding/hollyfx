@@ -1,7 +1,8 @@
-body{
-    margin: 0;
+body {
+  margin: 0;
 }
 .header_main {
+  margin-top: 10px;
   display: flex;
   flex-direction: row;
   background-color: black;
@@ -25,14 +26,56 @@ body{
 }
 
 .linkAccueil {
- margin-left: 5%;
+  margin-left: 5%;
 }
 .linkAccueilText {
-    font-size: 20px;
-    font-weight: 300;
+  font-size: 20px;
+  font-weight: 300;
   color: white;
   text-decoration: none;
 }
 .linkAccueilText:hover {
+  color: #ebaa30;
+}
+
+/* CSS DROPDOWN MENU */
+.dropbtn {
+  color: black;
+  padding: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  padding-top: 10px;
+  min-width: 70px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 10px 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  color: #ebaa30;
+}
+
+.linkAccueil:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
   color: #ebaa30;
 }
