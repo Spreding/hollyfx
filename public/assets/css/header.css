@@ -79,3 +79,32 @@ body {
 .dropdown:hover .dropbtn {
   color: #ebaa30;
 }
+
+@media (max-width: 700px) {
+  .header_main {
+    flex-direction: column;
+  }
+  /* .logofleche{
+    display: none !important; 
+  } */
+  .header_div_logo {
+    padding: 0;
+  }
+  .header_logo{
+    width: 100%;
+  }
+  .header_div_menu {
+    flex-direction: column;
+  }
+.linkAccueil{
+  margin-top: 5px;
+}
+  .dropdown-content {
+    /* display: block; */
+    position: relative;
+    font-weight: 300;
+  }
+  .dropdown-content a {
+    padding:5px;
+  }
+}

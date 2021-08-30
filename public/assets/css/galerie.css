@@ -4,12 +4,15 @@ body {
 .GalerieDiv {
   display: flex;
   flex-wrap: wrap;
+  padding: 0;
 }
 .liGalerie {
   height: 50vh;
   flex-grow: 1;
+  margin-top: 5px;
 }
 .imgGalerie {
+  
   max-height: 100%;
   min-width: 100%;
   object-fit:cover;
