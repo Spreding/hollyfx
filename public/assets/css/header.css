@@ -119,4 +119,10 @@ body {
   .dropdown-content a {
     padding: 5px;
   }
+
+  .MessageRestauration {
+    position: relative;
+    margin: auto;
+    left: 0;
+  }
 }
