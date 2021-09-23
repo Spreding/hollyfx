@@ -6,5 +6,32 @@
 {% endblock %}
 
 {% block body %}
+	<div class="divglobal">
+		<div class="divChild">
+			<p class="roboto divTitle">Mes Coordonées</p><br>
+			<div class="divContent">
+				<i class="fas fa-phone"></i>
+				<a href="tel:+33785535101" target="_blank"><p class="roboto">07.85.53.51.01</p></a><br>
+			</div>
+			<div class="divContent">
+			<i class="fas fa-envelope"></i>
+				<a href="mailto:contact@hollyfx.com" target="_blank"><p class="roboto">contact@hollyfx.com</p></a><br>
+				
+			</div>
+			<div class="divContent">
+				<i class="fab fa-instagram"></i>
+				<a href="https://www.instagram.com/hollyfx.makeup/" target="_blank"><p class="roboto">@HollyFx</p></a><br>
+			</div>
 
-{% endblock %}
+
+		</div>
+		<div class="divChild">
+		<p class="roboto divTitle">Envoyer moi un message</p><br>
+			{{form(form)}}
+			</div>
+		</div>
+		<div class="MessageRestauration">
+			<p class="textFrabric roboto">Site en cours de fabrication</p>
+		</div>
+
+	{% endblock %}

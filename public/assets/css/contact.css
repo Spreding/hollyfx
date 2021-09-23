@@ -1,0 +1,59 @@
+body {
+  background-color: black;
+}
+.divglobal {
+    padding: 70px 0;
+  margin: auto;
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  color: white;
+}
+
+.divChild {
+  width: 50%;
+}
+.divTitle {
+  font-weight: 500;
+  font-size: 35px;
+}
+.divContent {
+  display: flex;
+  flex-direction: row;
+}
+
+.divContent p {
+  font-weight: 300;
+  font-size: 30px;
+}
+
+.divContent i{
+  font-size: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 2% ;
+}
+.divContent a{
+  text-decoration: none;
+  color: white;
+}
+
+@media (max-width: 1200px) {
+  .divglobal {
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .divChild{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    
+  }
+  .divContent{
+    text-align: center;
+    justify-content: center;
+  }
+
+}
