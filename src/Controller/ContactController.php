@@ -25,7 +25,7 @@ class ContactController extends AbstractController
             
             $message = (new Email())
                 ->from($contactFormData['email'])
-                ->to('spredingdesign@gmail.com')
+                ->to('contact@hollyfx-makeup.fr')
                 ->subject('vous avez reçu un email de '.$contactFormData['fullName'])
                 ->text('Sender : '.$contactFormData['email'].\PHP_EOL.
                     $contactFormData['message'],
