@@ -2,7 +2,7 @@ body {
   background-color: black;
 }
 .divglobal {
-    padding: 70px 0;
+  padding: 70px 0;
   margin: auto;
   width: 70%;
   display: flex;
@@ -27,15 +27,25 @@ body {
   font-size: 30px;
 }
 
-.divContent i{
+.divContent i {
   font-size: 30px;
   margin-top: auto;
   margin-bottom: auto;
-  margin-right: 2% ;
+  margin-right: 2%;
 }
-.divContent a{
+.divContent a {
   text-decoration: none;
   color: white;
+}
+
+.formInput {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 @media (max-width: 1200px) {
@@ -45,15 +55,13 @@ body {
     margin-right: auto;
     text-align: center;
   }
-  .divChild{
+  .divChild {
     width: 80%;
     margin: auto;
     text-align: center;
-    
   }
-  .divContent{
+  .divContent {
     text-align: center;
     justify-content: center;
   }
-
 }
