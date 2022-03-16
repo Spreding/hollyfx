@@ -1,0 +1,43 @@
+{% extends 'header.html.twig' %}
+{% block stylesheets %}
+    <link href="{{ asset("assets/css/galerie.css") }}" rel="stylesheet">
+{% endblock %}
+{% block title %}HollyFx - Création
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset("assets/js/Creation.js") }}"></script>
+{% endblock %}
+{% block body %}
+    <div class="categorieMain">
+        <div class="categorieColumn">
+
+            <div class="slideshow-container">
+
+                {% for key, img in Categorie.maquillageImages %}
+
+                    <div class="mySlides fade">
+                        <img src="{{ asset("assets/uploads/images/"~ img.image) }}" style="width:100%" alt="">
+                        {#<div class="numbertext">{{ key+1 }} / {{ Categorie.maquillageImages|length }}</div> #}
+                    </div>
+
+                {% endfor %}
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                <div class="dotContent">
+                    {% for key,img in Categorie.maquillageImages %}
+                        <span class="dot" onclick="currentSlide({{ key+1 }})"></span>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+        <div class="categorieColumn categorieRightColumn ruda">
+            <div class="headMaquillage"><h1 class="title">{{ Categorie.title }}</h1> <h2 class="price">{{ Categorie.price}} €</h2></div>
+
+            <p class="desc">{{ Categorie.description }}</p>
+            <a href=""><div class="btnContact">Faire une demande</div></a>
+        </div>
+    </div>
+{% endblock %}

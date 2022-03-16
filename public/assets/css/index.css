@@ -5,53 +5,20 @@ body {
   overflow: hidden;
 }
 body {
-  background-image: url("/assets/img/background-home.jpg");
+  background-image: url('/assets/img/background-home.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-.div-home-img {
-  width: 100%;
-  height: 100vh;
-  text-align: center;
-}
-.home-img {
-  width: 100%;
-  vertical-align: top;
-}
-
-.div-menu {
-  left: 35%;
-  top: 10%;
-  position: absolute;
-  width: 30%;
-}
 .div-logo {
-  padding-top: 50px;
-  margin-bottom: 30px;
+  margin-top: 10%;
+  width: 40%;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 .logo-img {
-  width: 100%;
-}
-.div-linkAccueil {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.linkAccueil {
-  margin-top: 10px;
-  font-size: 25px;
-  font-weight: 300;
-  text-align: center;
-}
-.linkAccueilText {
-  color: white;
-  text-decoration: none;
-}
-.linkAccueilText:hover {
-  color: #ebaa30;
+  width: 80%;
 }
 
 .MessageRestauration{
@@ -65,33 +32,18 @@ body {
   font-size: 20px;
 }
 
-@media (max-width: 1500px) {
-  .div-menu {
-    width: 50%;
-    left: 25%;
-  }
+@media (max-width: 700px) {
+
   .logo-img{
+    width: 100%;
+  }
+  .div-logo{
     width: 70%;
+    margin-top: 50%;
   }
 
 }
-
-@media (min-width: 2100px) {
-  .linkAccueil{
-    font-size: 30px;
-  }
-}
-
 @media (max-width: 500px) {
-
-  .div-menu{
-    width: 90%;
-    left: 5%;
-  }
-  
-  .div-linkAccueil{
-    flex-direction: column;
-  }
   .MessageRestauration{
     font-size: 15px;
   }

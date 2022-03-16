@@ -1,0 +1,35 @@
+{% extends 'header.html.twig' %}
+
+{% block title %}Hello OrderController!{% endblock %}
+
+{% block body %}
+    <form method="post" action="{{ path("app_order_confirmation") }}">
+
+        <div>
+            <h1>MODE DE LIVRAISON</h1>
+            {% for  deliv in delivery %}
+                <input type="radio" id="{{ deliv.name ~ deliv.id }}" name="delivery" value="{{ deliv.id }}">
+                <label for="{{ deliv.name }}">{{ deliv }}</label>
+            {% endfor %}
+            <h1>ADDRESS</h1>
+            {% for addr in address %}
+                <input type="radio" id="{{ addr.name ~ addr.id}}" name="addressPostal" value="{{ addr.id }}">
+                <label for="{{ addr.name }}">{{ addr|raw }}</label><br><br>
+            {% endfor %}
+
+        </div>
+        <div>
+
+            <h1>VOTRE COMMANDE</h1>
+            {% for item in app.session.get('cart') %}
+                {{ dump(item) }}
+            {% endfor %}
+            <button type="submit">PLACE ORDER</button>
+        </div>
+
+
+    </form>
+
+
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'header.html.twig' %}
+{% block stylesheets %}
+    <link href="{{ asset("assets/css/productPage.css") }}" rel="stylesheet">
+{% endblock %}
+{% block title %}Hello ProductController!{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset("assets/js/productCarousel.js") }}"></script>
+    <script src="{{ asset("assets/js/productChoiceCart.js") }}"></script>
+{% endblock %}
+{% block body %}
+    <div class="productMainContainer">
+        <div class="container">
+            <div class="row">
+                {% for key,img in Creation.productImages %}
+                    <div class="column">
+                        <img class="demo cursor" src="{{ asset("assets/uploads/images/"~ img.image) }}"
+                             style="width:100%" onclick="currentSlide({{ key }})">
+                    </div>
+                {% endfor %}
+            </div>
+            {% for key,img in Creation.productImages %}
+                <div class="mySlides">
+                    <img style="width: 100%" src="{{ asset("assets/uploads/images/"~ img.image) }}">
+                </div>
+            {% endfor %}
+        </div>
+        <div class="productDescription ruda">
+
+            <h1>{{ Creation.title }}</h1><br>
+            <h2>{{ Creation.price }} €</h2> <br>
+            <p>{{ Creation.description }}</p> <br>
+        </div>
+        <div class="productChoiceCart ruda">
+            <h3>Coloris Pot</h3>
+            <div class="containerColor ">
+
+                {% for colors in Creation.productColors %}
+                    <div onclick="choiceColor({{ colors.id }},this)" class="colorBtn"
+                         style="background-color: {{ colors.colors }}"></div>
+
+                {% endfor %}
+            </div>
+
+            {{ form_start(Forms) }}
+            {{ form_row(Forms.Color) }}
+
+            <div class="mainQuantity">
+                <h3>Quantity</h3>
+                {{ form_row(Forms.Quantity) }}
+            </div>
+            {{ form_end(Forms) }}
+            <br>
+        </div>
+    </div>
+{% endblock %}

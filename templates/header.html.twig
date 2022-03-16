@@ -1,52 +1,102 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>
-			{% block title %}Welcome!
-			{% endblock %}
-		</title>
-		
-		<link rel="icon" href="{{asset("assets/img/HOLYFX-LOGO_noir.png")}}"/>
-		<link href="{{asset("assets/css/header.css")}}" rel="stylesheet">
-		<link href="{{asset("assets/css/fontController.css")}}" rel="stylesheet">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
-		<script src="https://kit.fontawesome.com/6ad9ea93a4.js" crossorigin="anonymous"></script>
-		{% block stylesheets %}
-			{#{{ encore_entry_link_tags('app') }}#}
-		{% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}HollyFx MakeUp
+        {% endblock %}
+    </title>
 
-		{% block javascripts %}
-			{#{{ encore_entry_script_tags('app') }}#}
-		{% endblock %}
-	</head>
-	<body>
-		<div class="header_main">
-			<div class="header_div_logo">
-				<a href="/"><img class="header_logo" src="{{asset("assets/img/HOLYFX-LOGO_blanc.svg")}}" alt=""></a>
-			</div>
-			<div class="header_div_menu roboto">
-				<div
-					class="linkAccueil dropdown">
-					<a href="{{path("Portfolio")}}" class="linkAccueilText">Portfolio <i class="logofleche fas fa-caret-down"></i></a>
-					
-					<div class="dropdown-content">
-						<a href="{{path("Creation")}}">Création</a>
-						<a href="{{path("MakeUp")}}">Make Up</a>
-						<a href="{{path("Perruque")}}">Perruque</a>
-					</div>
-				</div>
-				<div class="linkAccueil">
-					<a href="{{path("APropos")}}" class="linkAccueilText">A propos</a>
-				</div>
-				<div class="linkAccueil">
-					<a href="{{path("contact")}}" class="linkAccueilText">Contact</a>
-				</div>
-			</div>
-		</div>
-		{% block body %}{% endblock %}
-	</body>
+    <link rel="icon" href="{{ asset("assets/img/HOLYFX-LOGO_noir.png") }}"/>
+    <link href="{{ asset("assets/css/header.css") }}" rel="stylesheet">
+    <link href="{{ asset("assets/css/fontController.css") }}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ruda:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/dcc139ca7e.js" crossorigin="anonymous"></script>
+    {% block stylesheets %}
+    {% endblock %}
+
+    {% block javascripts %}
+
+    {% endblock %}
+    <script>
+        /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+        function myFunction() {
+            var x = document.getElementById("myLinks");
+            var y = document.getElementById("bars");
+            var z = document.getElementById("mark");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+                y.style.display = "block";
+                z.style.display = "none";
+            } else {
+                x.style.display = "block";
+                y.style.display = "none";
+                z.style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+<div
+        class="header_main">
+    {# TOPNAV #}
+    <div class="header_div_logo">
+        <a href="/">
+            <img class="header_logo" src="{{ asset("assets/img/HOLYFX-LOGO_blanc.svg") }}" alt="">
+        </a>
+    </div>
+    <div
+            id="myLinks" class="header_div_menu roboto">
+        {# myLinks #}
+        <div class="linkAccueil">
+            <a href="{{ path("Maquillage") }}" class="linkAccueilText">Maquillage</a>
+        </div>
+        <div class="linkAccueil">
+            <a href="{{ path("Creations") }}" class="linkAccueilText">Création</a>
+        </div>
+        <div class="linkAccueil">
+            <a href="{{ path("app_perruque") }}" class="linkAccueilText">Perruque</a>
+        </div>
+        <div class="linkAccueil">
+            <a href="{{ path("APropos") }}" class="linkAccueilText">A propos</a>
+        </div>
+        <div class="linkAccueil">
+            <a href="{{ path("contact") }}" class="linkAccueilText">Contact</a>
+        </div>
+{#        <div class="linkAccueil">#}
+{#            <a href="{{ path("contact") }}" class="linkAccueilText">Carte Cadeau</a>#}
+{#        </div>#}
+        <div class="linkAccueil">
+            <a href="{{ path("app_cart") }}" class="linkAccueilText">
+                <i class="fa-solid fa-cart-shopping"></i>
+                {% if app.session.get('cart')|length > 0 %}
+
+                    {%  set nbItem =0 %}
+                    {% for item in app.session.get('cart') %}
+                        {% set nbItem = nbItem + item['quantity']  %}
+                    {% endfor %}
+                    <p class="linkAccueilText nbItem">{{ nbItem}}</p>
+                {% endif %}
+            </a>
+
+        </div>
+    </div>
+    {# BigBurger #}
+    <div class="iconBurger">
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i id="bars" class="fa-solid fa-bars"></i>
+            <i id="mark" class="fa-solid fa-xmark"></i>
+        </a>
+    </div>
+
+</div>
+
+{% block body %}{% endblock %}
+</body>
 </html>

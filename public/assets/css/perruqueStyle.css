@@ -1,0 +1,50 @@
+html,
+body {
+    margin: 0;
+    height: 100%;
+    /*overflow: hidden;*/
+}
+
+body {
+    background-image: url("/assets/img/background-home.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+}
+
+.title {
+    color: white;
+    text-align: center;
+    font-size: 36px;
+    margin-top: 4%;
+
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 80%;
+    margin: 2% auto;
+}
+
+.container {
+    width: 25%;
+}
+
+.container img {
+    width: 100%;
+}
+
+.btnContact {
+    margin-right: auto;
+    margin-left: auto;
+    padding: 4px;
+    text-align: center;
+    color: white;
+    background-color: rgba(0,0,0,0.7);
+    border-radius: 20px;
+    width: fit-content;
+    text-decoration: none;
+}

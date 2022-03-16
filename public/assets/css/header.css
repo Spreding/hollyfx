@@ -1,22 +1,24 @@
 body {
   margin: 0;
 }
+a{
+  text-decoration: none;
+}
 .header_main {
-  margin-top: 10px;
   display: flex;
   flex-direction: row;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.7);
   align-items: center;
 }
 .header_div_logo {
   padding-left: 5%;
-  width: 30%;
+  width: 20%;
 }
 .header_logo {
   width: 30%;
 }
 .header_div_menu {
-  width: 70%;
+  width: 80%;
   margin-right: 10%;
   display: flex;
   flex-direction: row;
@@ -33,96 +35,60 @@ body {
   font-weight: 300;
   color: white;
   text-decoration: none;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.nbItem{
+  margin-left: 3px;
 }
 .linkAccueilText:hover {
   color: #ebaa30;
 }
 
-/* CSS DROPDOWN MENU */
-.dropbtn {
-  color: black;
-  padding: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
+.icon {
   display: none;
-  position: absolute;
-  background-color: black;
-  padding-top: 10px;
-  min-width: 70px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: white;
-  padding: 10px 10px;
   text-decoration: none;
-  display: block;
 }
-
-.dropdown-content a:hover {
-  color: #ebaa30;
-}
-
-.linkAccueil:hover .dropdown-content,
-.linkAccueil:active .dropdown-content {
-  display: block;
-}
-
-.dropdown:hover .dropbtn {
-  color: #ebaa30;
-}
-.MessageRestauration {
-  width: 33%;
-  position: absolute;
-  bottom: 0;
-  left: 33%;
-  text-align: center;
-  color: white;
-  font-weight: 300;
-  font-size: 20px;
+#mark{
+  display: none;
 }
 
 @media (max-width: 700px) {
+  /* Style the navigation menu */
   .header_main {
-    flex-direction: column;
-  }
-  /* .logofleche{
-    display: none !important; 
-  } */
-  .header_div_logo {
-    padding: 0;
-  }
-  .header_logo {
-    width: 100%;
-  }
-  .header_div_menu {
-    flex-direction: column;
-    margin-right: 0;
-  }
-  .linkAccueil {
-    margin-top: 5px;
-  }
-  .dropdown-content {
-    /* display: block; */
+    overflow: hidden;
     position: relative;
-    font-weight: 300;
-  }
-  .dropdown-content a {
-    padding: 5px;
+    flex-direction: column;
   }
 
-  .MessageRestauration {
-    position: relative;
-    margin: auto;
-    left: 0;
+  /* Hide the links inside the navigation menu (except for logo/home) */
+  .header_div_menu {
+    display: none;
+    margin: 0;
+  }
+  .header_logo {
+    display: none;
+  }
+  .iconBurger{
+    height: 40px;
+  }
+
+  /* Style navigation menu links */
+  .linkAccueil {
+    padding: 14px 16px;
+    display: block;
+  }
+
+  .icon {
+    display: block;
+    position: absolute;
+    font-size: 30px;
+    right: 10px;
+    top: 10px;
+    color: white;
   }
 }

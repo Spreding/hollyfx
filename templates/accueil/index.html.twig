@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'header.html.twig' %}
 
 {% block title %}HollyFx - MAKE UP ARTIST
 {% endblock %}
@@ -13,25 +13,11 @@
 
 {% block body %}
 	<div class="div-container">
-		<div class="div-menu roboto">
-			<div class="div-logo">
+		<div class="div-logo">
 				<img class="logo-img" src="{{asset("assets/img/HOLYFX-LOGO_blanc.svg")}}">
 			</div>
-			<div class="div-linkAccueil">
-				<div class="linkAccueil">
-					<a href="{{path("Portfolio")}}" class="linkAccueilText">Portfolio</a>
-				</div>
-				<div class="linkAccueil">
-					<a href="{{path("APropos")}}" class="linkAccueilText">A Propos</a>
-				</div>
-				<div class="linkAccueil">
-					<a href="{{path("contact")}}" class="linkAccueilText">Contact</a>
-				</div>
-			</div>
-
-		</div>
 		<div class="MessageRestauration">
-			<p class="textFrabric roboto">Site en cours de fabrication</p>
+			<p class="textFabric roboto">Site en cours de fabrication</p>
 		</div>
 
 	</div>

@@ -6,30 +6,26 @@
 {% endblock %}
 
 {% block body %}
-	<div class="categorieFlex">
-		<div class="categorieDiv">
-			<a class="categorieLink" href="{{path("MakeUp")}}">
-				<img class="galerie_categorie_button" src="{{asset("assets/img/maquillage_button_square.PNG")}}" alt="">
-				<p class="categorieText roboto">Make Up</p>
-			</a>
-
+	<div>
+		<p class="titleMaquillage ruda">Maquillage</p>
+		<div class="categorieRow">
+			<div class="categorieColumn ruda">
+				<a href="{{path("Categorie",{slug:"Jour"})}}">Jour</a>
+				<a href="{{path("Categorie",{slug:"Soiree"})}}">Soirée</a>
+				<a href="{{path("Categorie",{slug:"Shooting"})}}">Shooting / Mode</a>
+				<a href="{{path("Categorie",{slug:"Mariee"})}}">Mariée</a>
+				<a href="{{path("Categorie",{slug:"Cours-Collectif"})}}">Cours collectif</a>
+				<a href="{{path("Categorie",{slug:"Cours-Individuel"})}}">Cours individuel</a>
+			</div>
+			<div class="whiteBox"></div>
+			<div class="categorieColumn ruda">
+				<a href="{{path("Categorie",{slug:"Cours-SFX"})}}">Cours SFX</a>
+				{# <a href="">Bellypainting</a>
+				<a href="">Enfant</a> #}
+				<a href="{{path("Categorie",{slug:"Artistique"})}}">Artistique</a>
+				<a href="{{path("Categorie",{slug:"SFX"})}}">SFX</a>
+				<a href="{{path("contact")}}">Autre demande</a>
+			</div>
 		</div>
-		<div class="categorieDiv">
-			<a class="categorieLink" href="{{path("Creation")}}">
-				<img class="galerie_categorie_button" src="{{asset("assets/img/creation_button_square.PNG")}}" alt="">
-				<p class="categorieText roboto">Création</p>
-			</a>
-		</div>
-
-		<div class="categorieDiv">
-			<a class="categorieLink" href="{{path("Perruque")}}">
-				<img class="galerie_categorie_button" src="{{asset("assets/img/perruque_button_square.PNG")}}" alt="">
-				<p class="categorieText roboto">Perruque / Postiche</p>
-			</a>
-
-		</div>
-	</div>
-	<div class="MessageRestauration">
-		<p class="textFrabric roboto">Site en cours de fabrication</p>
 	</div>
 {% endblock %}

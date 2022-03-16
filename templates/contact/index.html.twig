@@ -1,37 +1,32 @@
 {% extends 'header.html.twig' %}
 {% block stylesheets %}
-	<link href="{{asset("assets/css/contact.css")}}" rel="stylesheet">
+    <link href="{{ asset("assets/css/contact.css") }}" rel="stylesheet">
 {% endblock %}
 {% block title %}HollyFx - Contact
 {% endblock %}
 
 {% block body %}
-	<div class="divglobal">
-		<div class="divChild">
-			<p class="roboto divTitle">Mes Coordonées</p><br>
-			<div class="divContent">
-				<i class="fas fa-phone"></i>
-				<a href="tel:+33785535101" target="_blank"><p class="roboto">07.85.53.51.01</p></a><br>
-			</div>
-			<div class="divContent">
-			<i class="fas fa-envelope"></i>
-				<a href="mailto:contact@hollyfx.com" target="_blank"><p class="roboto">contact@hollyfx-makeup.fr</p></a><br>
-				
-			</div>
-			<div class="divContent">
-				<i class="fab fa-instagram"></i>
-				<a href="https://www.instagram.com/hollyfx.makeup/" target="_blank"><p class="roboto">@hollyfx.makeup</p></a><br>
-			</div>
+    <div class="divglobal">
+        <div class="ruda divChild">
+            <h1 class="divTitle">Autre demande</h1><br>
+            <h2 class="">Contactez moi pour discuter ensemble de votre projet et établir un devis.</h2><br>
+            {{ form(form) }}
+        </div>
+    </div>
+    <div class="footer ruda">
+        <div>
+            <a href="tel:+33648491370">TEL : 06 48 49 13 70</a><br>
+            <a href="mailto:contact@hollyfx-makeup.fr">EMAIL : contact@hollyfx-makeup.fr</a>
+        </div>
+        <div>
+            <a href="{{ path("contact") }}">Mentions légales</a>
+        </div>
+        <div>
+            <a href="https://www.instagram.com/hollyfx.makeup/" target="_blank"><i class="iconInsta fab fa-instagram" aria-hidden="true"></i></a>
+        </div>
+    </div>
+    <div class="MessageRestauration">
+        <p class="textFrabric roboto">Site en cours de fabrication</p>
+    </div>
 
-
-		</div>
-		<div class="divChild">
-		<p class="roboto divTitle">Envoyer moi un message</p><br>
-			{{form(form)}}
-			</div>
-		</div>
-		<div class="MessageRestauration">
-			<p class="textFrabric roboto">Site en cours de fabrication</p>
-		</div>
-
-	{% endblock %}
+{% endblock %}

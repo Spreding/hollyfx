@@ -1,0 +1,33 @@
+{% extends 'header.html.twig' %}
+{% block stylesheets %}
+    <link href="{{ asset("assets/css/productIndex.css") }}" rel="stylesheet">
+{% endblock %}
+{% block title %}Hello ProductController!{% endblock %}
+
+{% block body %}
+    <h1 class="title ruda">CREATION</h1>
+    <div class="mainProduct ruda">
+        <a class="productDiv" href="{{path("contact")}}">
+            <div>
+                <H1>Création sur
+                    mesure</H1>
+                <P>Envie d’un projet particulier ? D'une idée cadeau ? D’une création unique ? Contactez moi afin d'en discuter! </P>
+            </div>
+
+        </a>
+        {% for Product in Products %}
+            <a  class="productDiv" href="{{ path("Creation",{slug:Product.slug}) }}">
+
+                {% for key,img in Product.productImages %}
+                    {% if key==0 %}
+                        <img class="imgProduct"src="{{asset("assets/uploads/images/"~ img.image)}}" alt="">
+                    {% endif %}
+                {% endfor %}
+
+                <h1>{{ Product.title }} </h1> <h2>{{ Product.price }} €</h2>
+            </a>
+        {% endfor %}
+
+
+    </div>
+{% endblock %}

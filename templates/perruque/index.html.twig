@@ -1,0 +1,19 @@
+{% extends 'header.html.twig' %}
+{% block stylesheets %}
+    <link href="{{ asset("assets/css/perruqueStyle.css") }}" rel="stylesheet">
+{% endblock %}
+{% block title %}HollyFx - Perruque{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset("assets/js/productCarousel.js") }}"></script>
+    <script src="{{ asset("assets/js/productChoiceCart.js") }}"></script>
+{% endblock %}
+
+{% block body %}
+    <h1 class="title ruda">PERRUQUE / COIFFE EXTRAVAGANTE</h1>
+    <div class="mainContainer">
+        <div class="container"><img src="{{ asset("assets/img/Perruque/perruque2.png") }}" alt=""></div>
+        <div class="container"><img src="{{ asset("assets/img/Perruque/perruque.png") }}" alt=""></div>
+        <div class="container"><img src="{{ asset("assets/img/Perruque/perruque3.png") }}" alt=""></div>
+    </div>
+    <a href=""><div class="btnContact ruda">Faire une demande de devis</div></a>
+{% endblock %}

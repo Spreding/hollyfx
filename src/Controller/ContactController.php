@@ -27,8 +27,9 @@ class ContactController extends AbstractController
                 ->from('contact@hollyfx-makeup.fr')
                 ->to('contact@hollyfx-makeup.fr')
                 ->subject('vous avez reçu un email de '.$contactFormData['fullName'])
-                ->text('Sender : '.$contactFormData['email'].\PHP_EOL.
-                    $contactFormData['message'],
+                ->text('Sender : '.$contactFormData['email'].\PHP_EOL.'PhoneNumber : '.$contactFormData['phoneNumber'].\PHP_EOL.
+                    'Object : '. $contactFormData['object'].\PHP_EOL.
+                    'Message : '.$contactFormData['message'],
                     'text/plain');
             $mailer->send($message);
             $this->addFlash('success', 'Vore message a été envoyé');

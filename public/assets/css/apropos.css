@@ -1,51 +1,87 @@
+html,
 body {
-  background-color: black;
+    margin: 0;
+    height: 100%;
+    /*overflow: hidden;*/
 }
 
+body {
+    background-image: url("/assets/img/background-home.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+}
+
+.titleAPropos{
+    color: white;
+    margin-top: 4%;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
 .divGlobal {
-  margin-top: 4%;
-  margin-left: 10%;
-  margin-right: 10%;
-  display: flex;
-  flex-direction: row;
-  color: white;
+    margin-top: 4%;
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    color: white;
 }
+
 .imgPropos {
-  width: 50%;
-  object-fit: contain;
+    width: 40%;
+    object-fit: contain;
 }
-.divGlobal p {
-  font-weight: 300;
-  font-size: 20px;
+.descriptionPropos{
+    width: 40%;
+    margin: 0 2%;
+    font-size: 17px;
+}
+.containerDescri{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.symboleDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
-
-.up {
-  margin-top: 0;
-  padding-top: 20px;
-  margin-left: 2%;
+.symboleDiv .nb{
+    width: 15%;
+    font-size: 20px;
 }
-.title {
-  font-size: 35px;
-  font-weight: 600;
+.symboleDiv svg{
+    width: 30%;
+}
+.descriP{
+    width: 50%;
+    margin-top: 0;
 }
 
 @media (max-width: 1200px) {
-  .divGlobal {
-    flex-direction: column;
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .imgPropos {
-    width: 100%;
-  }
-  .up {
-    margin-top: 20px;
-    margin-left: 10%;
-    margin-right: 10%;
-  }
-  .down {
-    margin-left: 10%;
-    margin-right: 10%;
-  }
+    .divGlobal {
+        flex-direction: column;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .imgPropos {
+        width: 100%;
+    }
+
+    .up {
+        margin-top: 20px;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .down {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
 }

@@ -4,14 +4,21 @@ namespace App\Controller;
 
 use App\Entity\CategorieImage;
 use App\Entity\Image;
+use App\Entity\MaquillageProduct;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class GalerieController extends AbstractController
 {
+    private $entityManager;
+    public function __construct(EntityManagerInterface $entityManager)
+    {
+        $this->entityManager = $entityManager;
+    }
     /**
-     * @Route("/Portfolio", name="Portfolio")
+     * @Route("/Maquillage", name="Maquillage")
      */
     public function index(): Response
     {
@@ -21,52 +28,17 @@ class GalerieController extends AbstractController
     }
 
     /**
-     * @Route("/Portfolio/Creation", name="Creation")
+     * @Route("/Maquillage/{slug}", name="Categorie")
      */
-    public function Creation(): Response
+    public function Maquillage($slug): Response
     {
-        $Categorie = $this->getDoctrine()->getRepository(CategorieImage::class)->findOneBy(['Name' => 'Creation']);
-        $images = [];
-
-        foreach ($Categorie->getImages() as $key => $value) {
-            $images[] = $value;
+        $Categorie = $this->entityManager->getRepository(MaquillageProduct::class)->findOneBy(['slug' => $slug]);
+        if (!$Categorie) {
+            return $this->redirectToRoute("Maquillage");
+//            throw $this->createNotFoundException('Error 404');
         }
-        return $this->render('galerie/creation.html.twig', [
-            'controller_name' => 'GalerieController',
-            'images' => $images
-        ]);
-    }
-
-    /**
-     * @Route("/Portfolio/MakeUp", name="MakeUp")
-     */
-    public function MakeUp(): Response
-    {
-        $Categorie = $this->getDoctrine()->getRepository(CategorieImage::class)->findOneBy(['Name' => 'MakeUp']);
-        $images = [];
-
-        foreach ($Categorie->getImages() as $key => $value) {
-            $images[] = $value;
-        }
-        return $this->render('galerie/makeup.html.twig', [
-            'controller_name' => 'GalerieController',
-            'images' => $images
-        ]);
-    }
-    /**
-     * @Route("/Portfolio/Perruque", name="Perruque")
-     */
-    public function Perruque(): Response
-    {
-        $Categorie = $this->getDoctrine()->getRepository(CategorieImage::class)->findOneBy(['Name' => 'Perruque']);
-        $images = [];
-
-        foreach ($Categorie->getImages() as $key => $value) {
-            $images[] = $value;
-        }
-        return $this->render('galerie/perruque.html.twig', [
-            'controller_name' => 'GalerieController',
-            'images' => $images
+        return $this->render('galerie/categorie.html.twig', [
+            "Categorie" => $Categorie
         ]);
     }
 }
