@@ -25,17 +25,18 @@ body {
 /* Position the image container (needed to position the left and right arrows) */
 .container {
     display: flex;
-    width: 40%;
+    width: 50%;
     flex-direction: row;
     position: relative;
+    justify-content: center;
 }
 
 .productDescription {
-    width: 40%;
+    width: 45%;
 }
 
 .productChoiceCart {
-    width: 15%;
+    width: 35%;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 20px;
     padding: 20px;
@@ -56,20 +57,20 @@ body {
 }
 
 .colorBtn {
-    width: 30px;
-    height: 30px;
-    border-radius: 15px;
-    border: 2px solid white;
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    border: 1px solid white;
     margin: 5px;
     cursor: pointer;
 }
 
 .colorBtn:hover {
-    border: 2px solid #ebaa30;
+    border: 1px solid #ebaa30;
 }
 
 .colorBtn.active {
-    border: 2px solid #ebaa30;
+    border: 1px solid #ebaa30;
 }
 
 .colorFormInput {
@@ -94,9 +95,11 @@ body {
 }
 
 .submitFormInput {
+    width: 100%;
     margin-top: 10px;
     color: white;
-    background-color: rgba(23, 23, 23, 0.7);
+    background-color: #BE833F;
+
     text-decoration: none;
     border: none;
     border-radius: 10px;
@@ -105,14 +108,20 @@ body {
 }
 
 .submitFormInput:hover {
-    color: black;
-    background-color: #ebaa30;
+    background-color: rgba(23, 23, 23, 0.7);
 }
 
 /* CARROUSSEL CSS  */
 /* Hide the images by default */
 .mySlides {
     display: none;
+}
+
+.mySlides img{
+    border-radius: 18px;
+}
+.petiteImg{
+    border-radius: 12px;
 }
 
 /* Add a pointer when hovering over the thumbnail images */
@@ -169,7 +178,7 @@ body {
 .row {
     display: flex;
     width: 10%;
-    margin-right: 3%;
+    margin-right: 5%;
     flex-direction: column;
     justify-content: space-evenly;
 }

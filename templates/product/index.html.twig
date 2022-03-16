@@ -18,11 +18,7 @@
         {% for Product in Products %}
             <a  class="productDiv" href="{{ path("Creation",{slug:Product.slug}) }}">
 
-                {% for key,img in Product.productImages %}
-                    {% if key==0 %}
-                        <img class="imgProduct"src="{{asset("assets/uploads/images/"~ img.image)}}" alt="">
-                    {% endif %}
-                {% endfor %}
+                <img class="imgProduct" src="{{asset("assets/uploads/images/"~ Product.slugIMG)}}" alt="">
 
                 <h1>{{ Product.title }} </h1> <h2>{{ Product.price }} €</h2>
             </a>

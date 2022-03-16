@@ -5,63 +5,77 @@
     <script src="{{ asset("assets/js/cartScript.js") }}"></script>
 {% endblock %}
 {% block body %}
-
-    <header id="site-header">
-        <div class="container">
-            <h1>Votre panier - {{ nbItem }} articles</h1>
-        </div>
-    </header>
-
-    <div class="container">
-
-        <section id="cart">
-
-            {% for item in app.session.get('cart') %}
-                <article class="product">
-                    <header>
-                        <a class="remove">
-                            <img src="{{asset("assets/uploads/images/"~item.product.productImages[0].image)  }}" alt="">
-                            <h3>Remove product</h3>
-                        </a>
-                    </header>
-
-                    <div class="content">
-
-                        <h1>{{ item.product.Title }}</h1>
-
-                        {{ item.product.description }}
-
-                        <div title="You have selected this product to be shipped in the color yellow." style="top: 0;background-color: {{ item.color.colors }};"
-                             class="color yellow"></div>
-                    </div>
-
-                    <footer class="content">
-                        <span class="qt-minus">-</span>
-                        <span class="qt">{{ item.quantity }}</span>
-                        <span class="qt-plus">+</span>
-
-                        <h2 class="full-price">
-                            {{item.product.price|number_format * item.quantity|number_format }} €
-                        </h2>
-
-                        <h2 class="price">
-                            {{item.product.price}} €
-                        </h2>
-                    </footer>
-                </article>
-            {% endfor %}
-        </section>
-
-    </div>
-
-    <footer id="site-footer">
-        <div class="container clearfix">
-            <div class="right">
-                <h1 class="total">Sous-Total: <span>177.16</span>€</h1>
-                <a class="btn" href="{{ path("app_order") }}">VALIDER LE PANIER</a>
+    {%  set nbItem =0 %}
+    {% for item in app.session.get('cart') %}
+        {% set nbItem = nbItem + item['quantity']  %}
+    {% endfor %}
+    {% if  nbItem > 0 %}
+        <header id="site-header">
+            <div class="container">
+                <h1>Votre panier - {{ nbItem }} articles</h1>
             </div>
+        </header>
+
+        <div class="container">
+
+            <section id="cart">
+
+                {% for item in app.session.get('cart') %}
+                    <article class="product">
+                        <header>
+                            <a class="remove">
+                                <img src="{{asset("assets/uploads/images/"~item.product.productImages[0].image)  }}" alt="">
+                                <h3>Remove product</h3>
+                            </a>
+                        </header>
+
+                        <div class="content">
+
+                            <h1>{{ item.product.Title }}</h1>
+
+                            {{ item.product.description }}
+
+                            <div title="You have selected this product to be shipped in the color yellow." style="top: 0;background-color: {{ item.color.colors }};"
+                                 class="color yellow"></div>
+                        </div>
+
+                        <footer class="content">
+                            <span class="qt-minus">-</span>
+                            <span class="qt">{{ item.quantity }}</span>
+                            <span class="qt-plus">+</span>
+
+                            <h2 class="full-price">
+                                {{item.product.price|number_format * item.quantity|number_format }} €
+                            </h2>
+
+                            <h2 class="price">
+                                {{item.product.price}} €
+                            </h2>
+                        </footer>
+                    </article>
+                {% endfor %}
+            </section>
 
         </div>
-    </footer>
+
+        <footer id="site-footer">
+            <div class="container clearfix">
+                <div class="right">
+                    <h1 class="total">Sous-Total: <span>177.16</span>€</h1>
+                    <a class="btn" href="{{ path("app_order") }}">VALIDER LE PANIER</a>
+                </div>
+
+            </div>
+        </footer>
+    {% else %}
+        <header id="site-header">
+            <div class="container">
+                <h1>Votre panier est vide</h1>
+                <a href="{{ path('homepage') }}">Retournez à l'accueil</a>
+            </div>
+        </header>
+
+    {% endif %}
+
 
 {% endblock %}

@@ -54,6 +54,11 @@ class Product
      */
     private $orderDetails;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slugImg;
+
     public function __construct()
     {
         $this->productImages = new ArrayCollection();
@@ -197,6 +202,18 @@ class Product
                 $orderDetail->setProducts(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getSlugImg(): ?string
+    {
+        return $this->slugImg;
+    }
+
+    public function setSlugImg(string $slugImg): self
+    {
+        $this->slugImg = $slugImg;
 
         return $this;
     }

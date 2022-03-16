@@ -5,7 +5,7 @@ window.onload = function () {
     colorInput = document.getElementById('product_cart_Color');
     btnSubmit = document.getElementById('product_cart_Submit');
     btnSubmit.addEventListener("click", clickBtn);
-    showSlides(slideIndex);
+    showSlides(0);
 }
 
 function choiceColor(id, btn) {
@@ -18,6 +18,6 @@ function choiceColor(id, btn) {
 function clickBtn() {
     if (colorInput.value == "") {
         // METTRE UNE DIV ERROR ET L AFFICHE POUR REMPLACER ALERTE
-        alert('OH CHOISI TA COULEUR');
+        alert('CHOISIS TA COULEUR');
     }
 }

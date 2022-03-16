@@ -13,43 +13,44 @@
             <div class="row">
                 {% for key,img in Creation.productImages %}
                     <div class="column">
-                        <img class="demo cursor" src="{{ asset("assets/uploads/images/"~ img.image) }}"
-                             style="width:100%" onclick="currentSlide({{ key }})">
+                        <img class="petiteImg demo cursor" src="{{ asset("assets/uploads/images/"~ img.image) }}"
+                             style="width:100%" onclick="currentSlide({{ key }})" alt="{{ Creation.title }}">
                     </div>
                 {% endfor %}
             </div>
             {% for key,img in Creation.productImages %}
                 <div class="mySlides">
-                    <img style="width: 100%" src="{{ asset("assets/uploads/images/"~ img.image) }}">
+                    <img  style="width: 100%" src="{{ asset("assets/uploads/images/"~ img.image) }}" alt="{{ Creation.title }}">
                 </div>
             {% endfor %}
         </div>
         <div class="productDescription ruda">
 
-            <h1>{{ Creation.title }}</h1><br>
+            <h1>{{ Creation.title }}</h1>
             <h2>{{ Creation.price }} €</h2> <br>
             <p>{{ Creation.description }}</p> <br>
-        </div>
-        <div class="productChoiceCart ruda">
-            <h3>Coloris Pot</h3>
-            <div class="containerColor ">
+            <div class="productChoiceCart ruda">
+                <h3>Coloris Pot</h3>
+                <div class="containerColor ">
 
-                {% for colors in Creation.productColors %}
-                    <div onclick="choiceColor({{ colors.id }},this)" class="colorBtn"
-                         style="background-color: {{ colors.colors }}"></div>
+                    {% for colors in Creation.productColors %}
+                        <div onclick="choiceColor({{ colors.id }},this)" class="colorBtn"
+                             style="background-color: {{ colors.colors }}"></div>
 
-                {% endfor %}
+                    {% endfor %}
+                </div>
+
+                {{ form_start(Forms) }}
+                {{ form_row(Forms.Color) }}
+
+                <div class="mainQuantity">
+                    <h3>Quantity</h3>
+                    {{ form_row(Forms.Quantity) }}
+                </div>
+                {{ form_end(Forms) }}
+                <br>
             </div>
-
-            {{ form_start(Forms) }}
-            {{ form_row(Forms.Color) }}
-
-            <div class="mainQuantity">
-                <h3>Quantity</h3>
-                {{ form_row(Forms.Quantity) }}
-            </div>
-            {{ form_end(Forms) }}
-            <br>
         </div>
+
     </div>
 {% endblock %}

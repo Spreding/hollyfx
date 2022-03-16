@@ -10,7 +10,15 @@
         <div class="ruda divChild">
             <h1 class="divTitle">Autre demande</h1><br>
             <h2 class="">Contactez moi pour discuter ensemble de votre projet et établir un devis.</h2><br>
-            {{ form(form) }}
+            {{ form_start(form) }}
+
+            <div class="nameForm">{{ form_row(form.fullName) }}</div>
+            <div class="emailForm"> {{ form_row(form.email) }}</div>
+            <div class="phoneForm">{{ form_row(form.phoneNumber) }}</div>
+            <div class="objectForm">{{ form_row(form.object) }}</div>
+            <div class="messageForm">{{ form_row(form.message) }}</div>
+            {{ form_row(form.submit) }}
+            {{ form_end(form) }}
         </div>
     </div>
     <div class="footer ruda">
@@ -22,11 +30,9 @@
             <a href="{{ path("contact") }}">Mentions légales</a>
         </div>
         <div>
-            <a href="https://www.instagram.com/hollyfx.makeup/" target="_blank"><i class="iconInsta fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/hollyfx.makeup/" target="_blank"><i class="iconInsta fab fa-instagram"
+                                                                                   aria-hidden="true"></i></a>
         </div>
-    </div>
-    <div class="MessageRestauration">
-        <p class="textFrabric roboto">Site en cours de fabrication</p>
     </div>
 
 {% endblock %}

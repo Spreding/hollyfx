@@ -32,8 +32,11 @@ body {
 
 .imgPropos {
     width: 40%;
-    object-fit: contain;
+    object-fit: cover;
+    border-radius: 18px;
+
 }
+
 .descriptionPropos{
     width: 40%;
     margin: 0 2%;

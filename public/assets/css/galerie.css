@@ -118,7 +118,7 @@ img {
 
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0,0,0,0.5);
 }
 
 /* Caption text */
@@ -168,14 +168,14 @@ img {
 /* Fading animation */
 .fade {
     -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
+    -webkit-animation-duration: 0.8s;
     animation-name: fade;
-    animation-duration: 1.5s;
+    animation-duration: 0.8s;
 }
 
 @-webkit-keyframes fade {
     from {
-        opacity: .4
+        opacity: .6
     }
     to {
         opacity: 1
@@ -184,7 +184,7 @@ img {
 
 @keyframes fade {
     from {
-        opacity: .4
+        opacity: .6
     }
     to {
         opacity: 1
