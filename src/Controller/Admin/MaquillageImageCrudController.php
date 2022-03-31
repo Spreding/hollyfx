@@ -21,7 +21,11 @@ class MaquillageImageCrudController extends AbstractCrudController
         return [
             Field::new('id')->hideOnForm(),
             TextField::new('name'),
-            ImageField::new('image')->onlyOnForms()->setUploadDir("public/assets/uploads/images/"),
+            ImageField::new('image')
+                ->onlyOnForms()
+                ->setUploadDir("public/assets/uploads/images/")
+                ->setSortable(false)
+                ->setFormTypeOption('required', false) ,
             ImageField::new('image')->hideOnForm()->setBasePath("/assets/uploads/images/"),
         ];
     }
