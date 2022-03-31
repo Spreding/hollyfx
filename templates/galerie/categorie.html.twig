@@ -37,7 +37,7 @@
             <div class="headMaquillage"><h1 class="title">{{ Categorie.title }}</h1> <h2 class="price">{{ Categorie.price}} €</h2></div>
 
             <p class="desc">{{ Categorie.description }}</p>
-            <a href=""><div class="btnContact">Faire une demande</div></a>
+            <a href="{{ path('contact') }}"><div class="btnContact">Faire une demande</div></a>
         </div>
     </div>
 {% endblock %}
