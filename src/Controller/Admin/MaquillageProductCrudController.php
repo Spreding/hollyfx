@@ -26,7 +26,7 @@ class MaquillageProductCrudController extends AbstractCrudController
             TextField::new('title'),
             TextField::new('slug'),
             TextareaField::new('description'),
-            NumberField::new('price'),
+            NumberField::new('price','Prix : (0 = Prestation sur devis / Ne pas mettre le € '),
             AssociationField::new('maquillageImages')->setFormTypeOptions([
                 'by_reference' => false,
             ])->autocomplete(),
