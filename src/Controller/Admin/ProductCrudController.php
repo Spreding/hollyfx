@@ -28,7 +28,11 @@ class ProductCrudController extends AbstractCrudController
             NumberField::new('Price'),
             TextareaField::new('Description'),
             TextField::new('Slug'),
-            ImageField::new('slugImg')->onlyOnForms()->setUploadDir("public/assets/uploads/images/"),
+            ImageField::new('slugImg')
+                ->onlyOnForms()
+                ->setUploadDir("public/assets/uploads/images/")
+                ->setSortable(false)
+                ->setFormTypeOption('required', false) ,
             ImageField::new('slugImg')->hideOnForm()->setBasePath("/assets/uploads/images/"),
             AssociationField::new('productColors')->setFormTypeOptions([
                 'by_reference' => false,
