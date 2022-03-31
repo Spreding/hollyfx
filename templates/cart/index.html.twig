@@ -5,13 +5,13 @@
     <script src="{{ asset("assets/js/cartScript.js") }}"></script>
 {% endblock %}
 {% block body %}
-    {%  set nbItem =0 %}
+    {% set nbItem =0 %}
     {% for item in app.session.get('cart') %}
-        {% set nbItem = nbItem + item['quantity']  %}
+        {% set nbItem = nbItem + item['quantity'] %}
     {% endfor %}
     {% if  nbItem > 0 %}
         <header id="site-header">
-            <div class="container">
+            <div class="container ruda">
                 <h1>Votre panier - {{ nbItem }} articles</h1>
             </div>
         </header>
@@ -19,59 +19,85 @@
         <div class="container">
 
             <section id="cart">
-
-                {% for item in app.session.get('cart') %}
+                {% set totalmount = 0 %}
+                {% for key,item in app.session.get('cart') %}
+                    {% set itemPrice = 0 %}
+                    {% set itemPrice = item.product.price|number_format * item.quantity|number_format %}
+                    {% set totalmount = totalmount + itemPrice %}
                     <article class="product">
-                        <header>
-                            <a class="remove">
-                                <img src="{{asset("assets/uploads/images/"~item.product.productImages[0].image)  }}" alt="">
-                                <h3>Remove product</h3>
-                            </a>
-                        </header>
 
-                        <div class="content">
+                        <div class="articleIMG">
+                            <img src="{{ asset("assets/uploads/images/"~item.product.productImages[0].image) }}" alt="">
+                        </div>
+
+                        <div class="articleINFO ruda">
 
                             <h1>{{ item.product.Title }}</h1>
 
-                            {{ item.product.description }}
+                            <p>Couleur :{{ item.color.ColorName }}</p>
 
-                            <div title="You have selected this product to be shipped in the color yellow." style="top: 0;background-color: {{ item.color.colors }};"
-                                 class="color yellow"></div>
                         </div>
 
-                        <footer class="content">
-                            <span class="qt-minus">-</span>
-                            <span class="qt">{{ item.quantity }}</span>
-                            <span class="qt-plus">+</span>
+                        <div class="dropdownDiv">
+                            <div class="dropdown ruda">
+                                <button onclick="dropdownFunction({{key}})" class="dropbtn">{{ item.quantity }}<i
+                                            class="angle-down fa-solid fa-angle-down"></i></button>
+                                <div id="{{key}}" class=" dropdown-content">
+                                    <a href="{{ path("app_setcart",{productkey:key,quantity:1}) }}">1</a>
+                                    <a href="{{ path("app_setcart",{productkey:key,quantity:2}) }}">2</a>
+                                    <a href="{{ path("app_setcart",{productkey:key,quantity:3}) }}">3</a>
+                                    <a href="{{ path("app_setcart",{productkey:key,quantity:4}) }}">4</a>
+                                    <a href="{{ path("app_setcart",{productkey:key,quantity:5}) }}">5</a>
+                                    <a href="{{ path("app_setcart",{productkey:key,quantity:6}) }}">6</a>
+                                    <a href="{{ path("app_setcart",{productkey:key,quantity:7}) }}">7</a>
+                                    <a href="{{ path("app_setcart",{productkey:key,quantity:8}) }}">8</a>
+                                    <a href="{{ path("app_setcart",{productkey:key,quantity:9}) }}">9</a>
+                                </div>
+                            </div>
+                        </div>
 
+                        <div class="articlePrice ruda">
                             <h2 class="full-price">
-                                {{item.product.price|number_format * item.quantity|number_format }} €
+                                 {{ itemPrice }} €
                             </h2>
-
-                            <h2 class="price">
-                                {{item.product.price}} €
-                            </h2>
-                        </footer>
+                        </div>
+                        <div class="articleDelete ruda">
+                            <a href="{{ path("app_setcart",{productkey:key,quantity:0}) }}">Supprimer</a>
+                        </div>
                     </article>
+
                 {% endfor %}
             </section>
 
         </div>
 
-        <footer id="site-footer">
-            <div class="container clearfix">
-                <div class="right">
-                    <h1 class="total">Sous-Total: <span>177.16</span>€</h1>
-                    <a class="btn" href="{{ path("app_order") }}">VALIDER LE PANIER</a>
-                </div>
-
+        <div id="site-footer">
+            <div class="container clearfix ruda">
+                <table class="textMontant">
+                    <tr>
+                        <td>Montant hors TVA :</td>
+                        <td id="mht">{{totalmount * 0.80}} €</td>
+                    </tr>
+                    <tr>
+                        <td >TVA estimé :</td>
+                        <td id="tva">{{totalmount * 0.20}} €</td>
+                    </tr>
+                    <tr>
+                        <td>Montant Total :</td>
+                        <td id="mt">{{ totalmount }} €</td>
+                    </tr>
+                    <tr>
+                        <td class="hfl">(Hors frais de livraison)</td>
+                    </tr>
+                </table>
+                <a class="validateCart" href="{{ path("app_order") }}">VALIDER LE PANIER</a>
             </div>
-        </footer>
+        </div>
     {% else %}
         <header id="site-header">
-            <div class="container">
+            <div class="container ruda">
                 <h1>Votre panier est vide</h1>
-                <a href="{{ path('homepage') }}">Retournez à l'accueil</a>
+                <a class="aHome" href="{{ path('homepage') }}">Retournez à l'accueil</a>
             </div>
         </header>
 

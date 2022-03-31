@@ -9,6 +9,7 @@ body {
     background-image: url("/assets/img/background-home.jpg");
     background-position: center center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
     background-color: black;
 }
@@ -43,9 +44,27 @@ body {
     margin-left: auto;
     padding: 8px;
     text-align: center;
-    color: white;
+
     background-color: rgba(0,0,0,0.7);
     border-radius: 20px;
     width: fit-content;
+
+}
+.btnContact a{
     text-decoration: none;
+    color: white;
+}
+
+@media screen and (max-width: 750px) {
+    .mainContainer{
+        flex-direction: column;
+        align-items: center;
+    }
+    .container{
+        width: 50%;
+        margin-bottom: 20px;
+    }
+    .btnContact{
+        margin-bottom: 20px ;
+    }
 }

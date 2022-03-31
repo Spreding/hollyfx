@@ -9,6 +9,7 @@ body {
     background-image: url("/assets/img/background-home.jpg");
     background-position: center center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
     background-color: black;
 }
@@ -84,7 +85,26 @@ img {
 }
 
 
-
+@media screen and (max-width: 750px) {
+    .categorieMain{
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+    }
+    .categorieColumn{
+        width: 100%;
+    }
+    .slideshow-container{
+        width: 80% !important;
+    }
+    .headMaquillage{
+        flex-direction: column;
+    }
+    .categorieRightColumn{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}
 
 
 /* Slideshow container */

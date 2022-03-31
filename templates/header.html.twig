@@ -77,20 +77,20 @@
 {#        <div class="linkAccueil">#}
 {#            <a href="{{ path("contact") }}" class="linkAccueilText">Carte Cadeau</a>#}
 {#        </div>#}
-        <div class="linkAccueil">
-            <a href="{{ path("app_cart") }}" class="linkAccueilText">
-                <i class="fa-solid fa-cart-shopping"></i>
-                {% if app.session.get('cart')|length > 0 %}
+{#        <div class="linkAccueil">#}
+{#            <a href="{{ path("app_cart") }}" class="linkAccueilText">#}
+{#                <i class="fa-solid fa-cart-shopping"></i>#}
+{#                {% if app.session.get('cart')|length > 0 %}#}
 
-                    {%  set nbItem =0 %}
-                    {% for item in app.session.get('cart') %}
-                        {% set nbItem = nbItem + item['quantity']  %}
-                    {% endfor %}
-                    <p class="linkAccueilText nbItem">{{ nbItem}}</p>
-                {% endif %}
-            </a>
+{#                    {%  set nbItem =0 %}#}
+{#                    {% for item in app.session.get('cart') %}#}
+{#                        {% set nbItem = nbItem + item['quantity']  %}#}
+{#                    {% endfor %}#}
+{#                    <p class="linkAccueilText nbItem">{{ nbItem}}</p>#}
+{#                {% endif %}#}
+{#            </a>#}
 
-        </div>
+{#        </div>#}
     </div>
     {# BigBurger #}
     <div class="iconBurger">

@@ -9,11 +9,12 @@ body {
     background-image: url("/assets/img/background-home.jpg");
     background-position: center center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
     background-color: black;
 }
 
-.title{
+.title {
     text-align: center;
     font-size: 36px;
     color: white;
@@ -53,4 +54,19 @@ body {
 .imgProduct {
     width: 80%;
     margin: auto;
+}
+
+@media screen and (max-width: 750px) {
+    .mainProduct {
+        flex-direction: column;
+        align-items: center;
+    }
+    .productDiv{
+        text-align: center;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .imgProduct{
+        width: 60%;
+    }
 }

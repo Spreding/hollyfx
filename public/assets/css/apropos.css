@@ -9,6 +9,7 @@ body {
     background-image: url("/assets/img/background-home.jpg");
     background-position: center center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
     background-color: black;
 }
@@ -69,12 +70,21 @@ body {
 @media (max-width: 1200px) {
     .divGlobal {
         flex-direction: column;
-        margin-left: 0;
-        margin-right: 0;
+        align-items: center;
+        margin: 0 auto;
     }
 
     .imgPropos {
         width: 100%;
+    }
+
+    .descriptionPropos{
+        width: 80%;
+    }
+
+    .containerDescri{
+        margin-top: 30px;
+        width: 80%;
     }
 
     .up {

@@ -29,18 +29,32 @@ class Cart
             $this->cart[$check]['quantity'] += $quantity;
         } else {
             $this->cart[] = [
+                "id" => $product->getId(),
                 "product" => $product,
                 "quantity" => $quantity,
                 "color" => $color,
 
             ];
         }
-        $this->session->set('cart',$this->cart);
+        $this->session->set('cart', $this->cart);
     }
 
-    public function RemoveCart(){
+    public function SetCart($productkey,$quantity){
+
+        if ($quantity > 0){
+            $this->cart[$productkey]['quantity'] = $quantity;
+        }else{
+            unset($this->cart[$productkey]);
+        }
+
+        $this->session->set('cart', $this->cart);
+    }
+
+
+    public function RemoveCart()
+    {
         $this->cart = [];
-        $this->session->set('cart',$this->cart);
+        $this->session->set('cart', $this->cart);
     }
 
     public function CheckProductInCart($element, $color)
@@ -52,7 +66,9 @@ class Cart
         }
         return -1;
     }
-    public function GetCart(){
+
+    public function GetCart()
+    {
         return $this->cart;
     }
 

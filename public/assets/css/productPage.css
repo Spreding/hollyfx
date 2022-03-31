@@ -2,14 +2,15 @@ html,
 body {
     margin: 0;
     height: 100%;
-    overflow: hidden;
 }
 
 body {
     background-image: url("/assets/img/background-home.jpg");
     background-position: center center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
+    background-color: black;
 }
 
 .productMainContainer {
@@ -111,16 +112,20 @@ body {
     background-color: rgba(23, 23, 23, 0.7);
 }
 
+
+
+
 /* CARROUSSEL CSS  */
 /* Hide the images by default */
 .mySlides {
     display: none;
 }
 
-.mySlides img{
+.mySlides img {
     border-radius: 18px;
 }
-.petiteImg{
+
+.petiteImg {
     border-radius: 12px;
 }
 
@@ -197,4 +202,31 @@ body {
 .active,
 .demo:hover {
     opacity: 1;
+}
+
+@media (max-width: 750px) {
+    .productMainContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+    .container{
+        width: 100%;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .row{
+        flex-direction: row;
+        width: 100%;
+        margin: 0;
+    }
+    .column{
+        width: 22%
+    }
+    .productDescription{
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    .productChoiceCart{
+        width: 90%;
+    }
 }
