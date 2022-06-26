@@ -1,31 +1,31 @@
 {% extends 'header.html.twig' %}
 {% block stylesheets %}
-	<link href="{{asset("assets/css/portfolio.css")}}" rel="stylesheet">
+    <link href="{{ asset("assets/css/portfolio.css") }}" rel="stylesheet">
 {% endblock %}
 {% block title %}HollyFx - Portfolio
 {% endblock %}
 
 {% block body %}
-	<div>
-		<p class="titleMaquillage ruda">Maquillage</p>
-		<div class="categorieRow">
-			<div class="categorieColumn ruda">
-				<a href="{{path("Categorie",{slug:"Jour"})}}">Jour</a>
-				<a href="{{path("Categorie",{slug:"Soiree"})}}">Soirée</a>
-				<a href="{{path("Categorie",{slug:"Shooting-Mode"})}}">Shooting / Mode</a>
-				<a href="{{path("Categorie",{slug:"Mariee"})}}">Mariée</a>
-				<a href="{{path("Categorie",{slug:"Cours-Collectif"})}}">Cours collectif</a>
-				<a href="{{path("Categorie",{slug:"Cours-Individuel"})}}">Cours individuel</a>
-			</div>
-			<div class="whiteBox"></div>
-			<div class="categorieColumn ruda">
-				<a href="{{path("Categorie",{slug:"Cours-SFX"})}}">Cours SFX</a>
-				{# <a href="">Bellypainting</a>
-				<a href="">Enfant</a> #}
-				<a href="{{path("Categorie",{slug:"Artistique"})}}">Artistique</a>
-				<a href="{{path("Categorie",{slug:"SFX"})}}">SFX</a>
-				<a href="{{path("contact")}}">Autre demande</a>
-			</div>
-		</div>
-	</div>
+    <div>
+        <p class="titleMaquillage ruda">Maquillage</p>
+        <div class="categorieRow">
+            <div class="categorieColumn ruda">
+                <a href="{{ path("Categorie",{slug:"Jour"}) }}">Jour</a>
+                <a href="{{ path("Categorie",{slug:"Soiree"}) }}">Soirée</a>
+                <a href="{{ path("Categorie",{slug:"Shooting-Mode"}) }}">Shooting / Mode</a>
+                <a href="{{ path("Categorie",{slug:"Mariee"}) }}">Mariée</a>
+                <a href="{{ path("Categorie",{slug:"Cours-Collectif"}) }}">Cours collectif</a>
+                <a href="{{ path("Categorie",{slug:"Cours-Individuel"}) }}">Cours individuel</a>
+            </div>
+            <div class="whiteBox"></div>
+            <div class="categorieColumn ruda">
+                <a href="{{ path("Categorie",{slug:"Cours-SFX"}) }}">Cours SFX</a>
+                <a href="">Bellypainting</a>
+                <a href="">Enfant</a>
+                <a href="{{ path("Categorie",{slug:"Artistique"}) }}">Artistique</a>
+                <a href="{{ path("Categorie",{slug:"SFX"}) }}">SFX</a>
+                <a href="{{ path("contact") }}">Autre demande</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}

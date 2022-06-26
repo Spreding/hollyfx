@@ -33,6 +33,7 @@ class GalerieController extends AbstractController
     public function Maquillage($slug): Response
     {
         $Categorie = $this->entityManager->getRepository(MaquillageProduct::class)->findOneBy(['slug' => $slug]);
+        dd($Categorie);
         if (!$Categorie) {
             return $this->redirectToRoute("Maquillage");
 //            throw $this->createNotFoundException('Error 404');
