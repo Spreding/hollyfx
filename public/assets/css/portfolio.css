@@ -54,6 +54,23 @@ body {
   color: #BE833F;
 }
 
+@media (max-width: 1700px) {
+  .categorieRow {
+    width: 40%;
+  }
+}
+@media (max-width: 1400px) {
+  .categorieRow {
+    width: 50%;
+  }
+}
+@media (max-width: 1000px) {
+  .categorieRow {
+    width: 65%;
+  }
+}
+
+
 @media (max-width: 750px) {
   .categorieRow{
     width: 80%;
